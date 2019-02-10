@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Team Algebros</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    html, body
+    {
+      height: 10em;
+      position: relative
+    }
+
+    body
+    {
+      margin: 0;
+      position: absolute;               /* 2 */
+      top: 50%;                         /* 3 */
+      transform: translate(0, -50%)
+      top: 50%;
+      /* background: #efefef; */
+      background-image: url("Main_WallPaper.jpg");
+      color: hsl(240,30,10);
+      font: 700 14px/1 Montserrat, sans-serif;
+      letter-spacing: 0.125em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    h1
+    {
+      font-size: 60px;
+      color: white;
+    }
+    .playButton
+    {
+      color: black;
+      font-size: 80px;
+      border-radius: 12px;
+    }
+    .playButton:hover
+    {
+      cursor: pointer;
+      -webkit-animation: halftone 1s forwards;
+      animation: halftone 1s forwards;
+      background: radial-gradient(circle, #9c89f7 0.2em, transparent 0.25em) 0 0/1.25em 1.25em, radial-gradient(circle, #9c89f7 0.2em, transparent 0.25em) 6.25em 6.25em/1.25em 1.25em;
+      color: #e4f789;
+    }
+    @-webkit-keyframes halftone
+    {
+      100% {
+        background-size: 2.375em 2.375em, 0.1em 0.1em;
+      }
+    }
+    @keyframes halftone
+    {
+      100% {
+        background-size: 2.375em 2.375em, 0.1em 0.1em;
+      }
+    }
+
+    </style>
+
+  </head>
+  <body>
+    <h1 >Team Algebros Game! (lol someone change this!)</h1>
+    <br><br><br><br><br>
+    <button class="playButton">Play</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
