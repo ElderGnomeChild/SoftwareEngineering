@@ -14,7 +14,6 @@
       height: 10em;
       position: relative
     }
-
     body
     {
       margin: 0;
@@ -30,7 +29,6 @@
       text-align: center;
       text-transform: uppercase;
     }
-
     h1
     {
       font-size: 60px;
@@ -50,6 +48,7 @@
       background: radial-gradient(circle, #9c89f7 0.2em, transparent 0.25em) 0 0/1.25em 1.25em, radial-gradient(circle, #9c89f7 0.2em, transparent 0.25em) 6.25em 6.25em/1.25em 1.25em;
       color: #e4f789;
     }
+
     @-webkit-keyframes halftone
     {
       100% {
@@ -61,7 +60,16 @@
       100% {
         background-size: 2.375em 2.375em, 0.1em 0.1em;
       }
-    }
+      .SignInButton {
+        color: white;
+        padding: 15px 32px;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        background-color: #008CBA;
+        float: center;
+      }
 
     </style>
 
@@ -70,7 +78,7 @@
     <h1 >Team Algebros Game! (lol someone change this!)</h1>
     <br><br><br><br><br>
     <button class="playButton">Play</button>
-
+    <input type="button" class="SignInButton" value="Teacher Log In">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
