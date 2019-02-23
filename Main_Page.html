@@ -11,130 +11,40 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <link href="Teacher_Login/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-  html, body
-  {
-    height: 10em;
-    position: relative
-  }
-  body
-  {
-    margin: 0;
-    position: absolute;               /* 2 */
-    top: 50%;                         /* 3 */
-    transform: translate(0, -50%)
-    top: 50%;
-    /* background: #efefef; */
-    background: url(Main_Wallpaper.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-size: cover;
-    color: hsl(240,30,10);
-    font: 700 14px/1 Montserrat, sans-serif;
-    letter-spacing: 0.125em;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  h1
-  {
-    font-size: 60px;
-    color: white;
-  }
-  .playButton
-  {
-    color: black;
-    font-size: 80px;
-    border-radius: 12px;
-  }
-  .playButton:hover
-  {
-    cursor: pointer;
-    -webkit-animation: halftone 1s forwards;
-    animation: halftone 1s forwards;
-    background: radial-gradient(circle, #9c89f7 0.2em, transparent 0.25em) 0 0/1.25em 1.25em, radial-gradient(circle, #9c89f7 0.2em, transparent 0.25em) 6.25em 6.25em/1.25em 1.25em;
-    color: #e4f789;
-  }
-
-  @-webkit-keyframes halftone
-  {
-    100% {
-      background-size: 2.375em 2.375em, 0.1em 0.1em;
-    }
-  }
-  @keyframes halftone
-  {
-    100% {
-      background-size: 2.375em 2.375em, 0.1em 0.1em;
-    }
-  }
-
-  .SignInButton {
-    border-radius: 12px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    color: white;
-    padding: 15px 32px;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    background-color: #1d1bb5;
-  }
-
-  .SignInButton:hover
-  {
-    cursor: pointer;
-  }
-
-  </style>
-
+  <!-- LINEARICONS -->
+  <link rel="stylesheet" href="Teacher_Login/fonts/linearicons/style.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="main_script.js"></script>
 
 </head>
 <body>
   <h1 >Team Algebros Game! (lol someone change this!)</h1>
   <br><br><br><br><br>
   <button class="playButton" onclick="location.href='./Student_Login.html'">Play</button>
-  <input type="button" class="SignInButton" value="Teacher Log In" data-toggle="modal" data-target="#myModal">
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+  <input type="button" class="SignInButton" value="Teacher Log In" onclick="document.getElementById('id01').style.display='block'">
+  <div id="id01" class="modal">
 
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Sign In</h4>
-        </div>
-        <form class="cd-form">
-          <p class="fieldset">
-            <label class="image-replace cd-email" for="signin-email">E-mail</label>
-            <input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
-          </p>
+  <form class="modal-content animate" action="/action_page.php">
 
-          <p class="fieldset">
-            <label class="image-replace cd-password" for="signin-password">Password</label>
-            <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password">
-            <a href="#0" class="hide-password">Hide</a>
-          </p>
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
 
-          <p class="fieldset">
-            <input type="checkbox" id="remember-me" checked>
-            <label for="remember-me">Remember me</label>
-          </p>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
 
-          <p class="fieldset">
-            <input class="full-width" type="submit" value="Login">
-          </p>
-        </form>
-
-        <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
-        <!-- <a href="#0" class="cd-close-form">Close</a> -->
-      </div> <!-- cd-login -->
+      <button class="loginBtn" type="submit" onclick="location.href='./Teacher_Login/index.html'">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
     </div>
 
-  </div>
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="newUser" onclick="location.href='./Teacher_Login/Teacher_Login.html'">New User</button>
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="Teacher_Login/dist/js/bootstrap.min.js"></script>
