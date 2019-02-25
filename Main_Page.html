@@ -1,77 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Team Algebros</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Algebros</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <style>
-    html, body
-    {
-      height: 10em;
-      position: relative
-    }
+  <!-- Bootstrap -->
 
-    body
-    {
-      margin: 0;
-      position: absolute;               /* 2 */
-      top: 50%;                         /* 3 */
-      transform: translate(0, -50%)
-      top: 50%;
-      /* background: #efefef; */
-      background-image: url("Main_WallPaper.jpg");
-      color: hsl(240,30,10);
-      font: 700 14px/1 Montserrat, sans-serif;
-      letter-spacing: 0.125em;
-      text-align: center;
-      text-transform: uppercase;
-    }
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="Teacher_Login/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- LINEARICONS -->
+  <link rel="stylesheet" href="Teacher_Login/fonts/linearicons/style.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="main_script.js"></script>
 
-    h1
-    {
-      font-size: 60px;
-      color: white;
-    }
-    .playButton
-    {
-      color: black;
-      font-size: 80px;
-      border-radius: 12px;
-    }
-    .playButton:hover
-    {
-      cursor: pointer;
-      -webkit-animation: halftone 1s forwards;
-      animation: halftone 1s forwards;
-      background: radial-gradient(circle, #9c89f7 0.2em, transparent 0.25em) 0 0/1.25em 1.25em, radial-gradient(circle, #9c89f7 0.2em, transparent 0.25em) 6.25em 6.25em/1.25em 1.25em;
-      color: #e4f789;
-    }
-    @-webkit-keyframes halftone
-    {
-      100% {
-        background-size: 2.375em 2.375em, 0.1em 0.1em;
-      }
-    }
-    @keyframes halftone
-    {
-      100% {
-        background-size: 2.375em 2.375em, 0.1em 0.1em;
-      }
-    }
+</head>
+<body>
+  <h1 >Team Algebros Game! (lol someone change this!)</h1>
+  <br><br><br><br><br>
+  <button class="playButton" onclick="location.href='./Student_Login.html'">Play</button>
+  <input type="button" class="SignInButton" value="Teacher Log In" onclick="document.getElementById('id01').style.display='block'">
+  <div id="id01" class="modal">
 
-    </style>
+  <form class="modal-content animate" action="/action_page.php">
 
-  </head>
-  <body>
-    <h1 >Team Algebros Game! (lol someone change this!)</h1>
-    <br><br><br><br><br>
-    <button class="playButton">Play</button>
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button class="loginBtn" type="submit" onclick="location.href='./Teacher_Login/index.html'">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="newUser" onclick="location.href='./Teacher_Login/Teacher_Login.html'">New User</button>
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="Teacher_Login/dist/js/bootstrap.min.js"></script>
+</body>
 </html>
