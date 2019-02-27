@@ -30,9 +30,11 @@
         var x = document.getElementById("studentTable");
         var row = x.insertRow(-1);
         var runNum = row.insertCell(0);
-        var studentName = row.insertCell(1).contentEditable = true;
-        var studentNum = row.insertCell(2).contentEditable = true;
-        var game1 = row.insertCell(3);
+        var firstName = row.insertCell(1).contentEditable = true;
+    		var lastName = row.insertCell(2).contentEditable = true;
+    		var dob = row.insertCell(3).contentEditable = true;
+        var studentNum = row.insertCell(4).contentEditable = true;
+        var game1 = row.insertCell(5);
 
       }
 
@@ -99,9 +101,11 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Student Name</th>
+                  <th>First Name</th>
+        				  <th>Last Name</th>
+        				  <th>Date of Birth</th>
                   <th>Student #</th>
-                  <th>Game #1</th>
+                  <th>Total XP</th>
                 </tr>
               </thead>
             </table>
