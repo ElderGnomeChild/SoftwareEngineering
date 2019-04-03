@@ -7,11 +7,11 @@ body
 {
   margin: 0;
   position: absolute;               /* 2 */
-  top: 50%;                         /* 3 */
+  top: 200%;                         /* 3 */
   transform: translate(0, -50%)
   top: 50%;
   /* background: #efefef; */
-  background: url(Main_Wallpaper.jpg) no-repeat center center fixed;
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
