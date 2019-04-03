@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Logged in as {{ user.username }}.
+  <h1>{{ user.fname }} {{ user.lname }}'s Homepage</h1>
+  {% if user.is_teacher %}
+    <p><a href="{% url 'viewClass' %}">View Your Class</a></p>
+    <p>{{ user.email }}</p>
+  {% endif %}
+
+  {% if user.is_student %}
+    <h1><a href="http://s3-us-west-2.amazonaws.com/www.algebros.com/Math_Shooter/index.html">PLAY</a></h1>
+  {% endif %}
+  
+  <p><a href="{% url 'logout' %}">logout</a></p>
+  <p><a href="{% url 'password_reset' %}">reset password</a></p>
+
+
+{% else %}
+  <p>You are not logged in</p>
+  <H2><a href="{% url 'login' %}">Log In</a></H2>
+  <p>-------------------------------------------------------------------</p>
+  <p><a href="{% url 'student_signup' %}">Student Signup</a></p>
+  <p><a href="{% url 'teacher_signup' %}">Teacher Signup</a></p>
+  <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
+{% endif %}
+{% endblock %}

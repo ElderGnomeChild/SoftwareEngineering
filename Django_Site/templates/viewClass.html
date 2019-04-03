@@ -1,0 +1,18 @@
+{% if student_list %}
+<H1>{{ t.user.fname }} {{t.user.lname}}'s Class:</H1>
+    {% for student in student_list %}
+        {% if student.teacher_id == t %}
+        <li><a href="{% url 'studentReport' student.user.id %}">{{ student.user.fname }} {{ student.user.lname }}</a></li>
+        {% endif %}
+    {% endfor %}
+
+    <!-- <p>Add students to class</p> -->
+    <p><a href="{% url 'addStudents' %}">Add Students to Class</a></p>
+    </ul>
+<div align="right">
+        <a href="{% url 'home' %}">Go Home</a>
+        </div>
+    <ul>
+{% else %}
+    <p>No students are available.</p>
+{% endif %}

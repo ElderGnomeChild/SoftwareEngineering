@@ -1,0 +1,21 @@
+{% if student %}
+    <ul>
+        <H1>{{ student.user.fname }} {{ student.user.lname }}'s Progress Report:</H1>
+        <h2>Student Info:</h2>
+        <h3>Experience: {{ student.total_xp }}</h3>
+        <h3>---------------------------------------------------------------------</h3>
+        <h5>Date of Birth: {{ student.user.birthdate }}</h5>
+        <h5>Teacher: {{ student.teacher_id.user}}</h5>
+    {% if student.teacher_id != teacher %}
+        <p><a href="{% url 'added' student.user.id %}">Add student to my class</a></p>
+    {% endif %}
+
+    {% if student.teacher_id == teacher %}
+        <p><a href="{% url 'removed' student.user.id %}">Remove student from my class</a></p>
+    {% endif %}
+
+
+    </ul>
+{% else %}
+    <p>No student with that id.</p>
+{% endif %}
