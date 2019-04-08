@@ -13,7 +13,7 @@ http://s3-us-west-2.amazonaws.com/www.algebros.com/Student_Dashboard.html
 
 # To run the Django Site: 
 
-navigate into the djangoSite directory
+navigate into the Django_Site directory
 
 on the command line: 'python3 manage.py runserver'
 
