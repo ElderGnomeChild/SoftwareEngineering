@@ -12,6 +12,7 @@
 
     {% if student.teacher_id == teacher %}
         <p><a href="{% url 'removed' student.user.id %}">Remove student from my class</a></p>
+        <p><a href="{% url 'editStudent' student.user.id %}">Edit {{ student.user.fname }}'s profile</a></p>
     {% endif %}
 
 

@@ -62,3 +62,10 @@ class TeacherSignUpForm(UserCreationForm):
         teacher = Teacher.objects.create(user=user)
         
         return user
+
+class EditStudent(forms.Form):
+    # student_id = forms.IntegerField()
+    experience_value = forms.IntegerField()
+
+    # user = CustomUser.objects.get()
+    # user.student.total_xp = experience_value

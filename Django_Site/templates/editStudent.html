@@ -1,0 +1,6 @@
+<form action="{% url 'editStudent' student.user.id %}" method="post">
+    <p>Change {{ student.user.fname }} {{ student.user.lname }}'s total experience earned?</p>
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>

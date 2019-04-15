@@ -8,7 +8,9 @@ from .models import CustomUser, Teacher, Student
 from django.contrib.auth import login
 from django.shortcuts import redirect, get_object_or_404, render
 
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+
+from .forms import EditStudent
 
 class SignUp(generic.CreateView):
     form_class = CustomUserCreationForm
@@ -85,3 +87,26 @@ def removed(request, student_id):
     student.teacher_id = None
     student.save()
     return render(request, 'removed.html', {'student': student, 'teacher': teacher})
+
+def editStudent(request, student_id):
+    teacher = request.user.teacher
+    user = get_object_or_404(CustomUser, id = student_id)
+    student = user.student
+
+    if request.method == 'POST':
+        form = EditStudent(request.POST)
+        if form.is_valid():
+            # student.total_xp = form.cleaned_data['experience_value']
+            print(student.total_xp)
+            change = form.cleaned_data['experience_value']
+            print(change)
+            student.total_xp = change
+            student.save()
+            return redirect('viewClass')
+
+    else:
+        form = EditStudent()
+    
+    return render(request, 'editStudent.html', {'student': student, 'teacher': teacher, 'form':form})
+
+
