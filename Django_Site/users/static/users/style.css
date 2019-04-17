@@ -1,0 +1,36 @@
+p {
+    color: burlywood
+}
+
+h1 {
+    color: blanchedalmond
+}
+
+h2 {
+    color: blanchedalmond
+}
+
+h3 {
+    color: blanchedalmond
+}
+
+h4 {
+    color: blanchedalmond
+}
+
+h5 {
+    color: blanchedalmond
+}
+
+a {
+    color: whitesmoke;
+    text-decoration: none
+}
+
+body {
+    background: white url("images/space.gif");
+}
+
+form {
+    color: burlywood
+}

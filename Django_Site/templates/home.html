@@ -4,7 +4,7 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-  Logged in as {{ user.username }}.
+  <p>Logged in as {{ user.username }}.</p>
   <h1>{{ user.fname }} {{ user.lname }}'s Homepage</h1>
   {% if user.is_teacher %}
     <p><a href="{% url 'viewClass' %}">View Your Class</a></p>

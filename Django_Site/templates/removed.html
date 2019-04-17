@@ -1,3 +1,7 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'users/style.css' %}">
+
 <h3>{{ student.user.fname }} {{ student.user.lname }} removed from {{teacher.user.fname }}'s class.</h3>
 
 <p><a href="{% url 'home' %}">Back Home</a></p>

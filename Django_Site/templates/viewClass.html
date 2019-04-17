@@ -1,3 +1,7 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'users/style.css' %}">
+
 {% if student_list %}
 <H1>{{ t.user.fname }} {{t.user.lname}}'s Class:</H1>
     {% for student in student_list %}

@@ -1,3 +1,7 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'users/style.css' %}">
+
 <form action="{% url 'editStudent' student.user.id %}" method="post">
     <p>Change {{ student.user.fname }} {{ student.user.lname }}'s total experience earned?</p>
     {% csrf_token %}
