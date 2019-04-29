@@ -26,3 +26,12 @@ class Student(models.Model):
     total_xp = models.IntegerField(default=0)
     # def __str__(self):
     #     return self.user.__str__
+
+class GameInstance(models.Model):
+    id = models.IntegerField(auto_created=True, primary_key=True)
+    user_id = models.ForeignKey(Student, on_delete=models.CASCADE)
+    points_scored = models.IntegerField()
+    game_type = models.IntegerField()
+    # points_possible = 100
+    def __str__(self):
+        return id.__str__

@@ -6,7 +6,26 @@
     <ul>
         <H1>{{ student.user.fname }} {{ student.user.lname }}'s Progress Report:</H1>
         <h2>Student Info:</h2>
+        <h3>Student ID: {{ student.user.id }}</h3>
         <h3>Experience: {{ student.total_xp }}</h3>
+        <h3>Game History:</h3>
+        {% for game in games %}
+            {% if game.user_id.user.id == student.user.id%}
+
+                {% if game.game_type == 0 %}
+                    <li> Addition Score: {{game.points_scored}}</li>
+                {% endif %}
+
+                {% if game.game_type == 1 %}
+                    <li> Subtraction Score: {{game.points_scored}}</li>
+                {% endif %}
+
+                {% if game.game_type == 2 %}
+                    <li> Place Value Score: {{game.points_scored}}</li>
+                {% endif %}
+
+            {% endif %}
+        {% endfor %}
         <h3>---------------------------------------------------------------------</h3>
         <h5>Date of Birth: {{ student.user.birthdate }}</h5>
         <h5>Teacher: {{ student.teacher_id.user}}</h5>

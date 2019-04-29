@@ -69,3 +69,9 @@ class EditStudent(forms.Form):
 
     # user = CustomUser.objects.get()
     # user.student.total_xp = experience_value
+
+
+class AddGameInstance(forms.Form):
+    student_id = forms.IntegerField()
+    points_scored = forms.IntegerField()
+    game_type = forms.IntegerField()

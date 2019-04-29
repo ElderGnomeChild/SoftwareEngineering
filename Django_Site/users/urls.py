@@ -11,5 +11,6 @@ urlpatterns = [
     path('addStudents', views.addStudents, name='addStudents'),
     path('added/<int:student_id>', views.added, name='added'),
     path('removed/<int:student_id>', views.removed, name='removed'),
-    path('editStudent/<int:student_id>', views.editStudent, name='editStudent')
+    path('editStudent/<int:student_id>', views.editStudent, name='editStudent'),
+    path('addGameInstance', views.addGameInstance, name='addGameInstance')
 ]

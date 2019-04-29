@@ -2,8 +2,8 @@
 from django.urls import reverse_lazy
 from django.views import generic
 
-from .forms import CustomUserCreationForm, StudentSignUpForm, TeacherSignUpForm
-from .models import CustomUser, Teacher, Student
+from .forms import CustomUserCreationForm, StudentSignUpForm, TeacherSignUpForm, AddGameInstance
+from .models import CustomUser, Teacher, Student, GameInstance
 
 from django.contrib.auth import login
 from django.shortcuts import redirect, get_object_or_404, render
@@ -63,7 +63,8 @@ def studentReport(request, student_id):
     user = get_object_or_404(CustomUser, id = student_id)
     student = user.student
     teacher = request.user.teacher
-    return render(request, 'studentReport.html', {'student': student, 'teacher': teacher})
+    games = GameInstance.objects.all()
+    return render(request, 'studentReport.html', {'student': student, 'teacher': teacher, 'games': games})
     
 def addStudents(request):
     user = request.user
@@ -96,10 +97,7 @@ def editStudent(request, student_id):
     if request.method == 'POST':
         form = EditStudent(request.POST)
         if form.is_valid():
-            # student.total_xp = form.cleaned_data['experience_value']
-            print(student.total_xp)
             change = form.cleaned_data['experience_value']
-            print(change)
             student.total_xp = change
             student.save()
             return redirect('viewClass')
@@ -108,5 +106,31 @@ def editStudent(request, student_id):
         form = EditStudent()
     
     return render(request, 'editStudent.html', {'student': student, 'teacher': teacher, 'form':form})
+
+
+def addGameInstance(request):
+    # student = request.user.student
+
+    if request.method == 'POST':
+        form = AddGameInstance(request.POST)
+        if form.is_valid():
+            stu = form.cleaned_data['student_id']
+            user = get_object_or_404(CustomUser, id = stu)
+            student = user.student
+            points = form.cleaned_data['points_scored']
+            gType = form.cleaned_data['game_type']
+            print(student, points, gType)
+            # newInst = GameInstance(user_id=student, points_scored=points, game_type=gType)
+            newInst = GameInstance.objects.create(user_id=student, points_scored=points, game_type=gType)
+            # newInst.save()
+            student.total_xp += points
+            student.save()
+
+            return redirect('home')
+
+    else:
+        form = AddGameInstance()
+    
+    return render(request, 'addGameInstance.html', {'form':form})
 
 

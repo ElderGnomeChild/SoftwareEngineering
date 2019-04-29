@@ -25,10 +25,17 @@ SECRET_KEY = 'o%iqcs!p#2shkqus#dod3-2hj3ei*@7z3!u#+blph_q-a&rs(m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['django-env-Math.vbupzipuhy.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = [
+    'django-env-Math.vbupzipuhy.us-west-2.elasticbeanstalk.com',
+    'https://s3-us-west-2.amazonaws.com/mathteroids/index.html',
+]
+
+# ALLOWED_HOSTS = ['*']
 
 
 # Application definition
+
+# CORS_ORIGIN_ALLOW_ALL=True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'accounts.apps.AccountsConfig',
     'users.apps.UsersConfig'
+    # 'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -49,6 +57,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
+    # 'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'please_work.urls'
